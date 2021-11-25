@@ -1,0 +1,7 @@
+FROM postgres:14.1-alpine
+
+ENV POSTGRES_PASSWORD=postgres  POSTGRES_USER=postgres  POSTGRES_DB=fe_docker
+
+EXPOSE 5432
+
+VOLUME ~/Documents/backup/postgres/fe_docker/:/var/lib/postgresql/data
