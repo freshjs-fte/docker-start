@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
   res.status(200).send("Hello from container");
 });
 
-mongoose.connect('mongodb://172.17.0.2:27017/fe_mongo')
+mongoose.connect('mongodb://fe_mongo_db:27017/fe_mongo') // 
 
 const User = mongoose.model(
   "User",
@@ -20,7 +20,15 @@ const User = mongoose.model(
 
 test();
 
-async function test() {
+
+/**
+ * 
+ * @param {Object} options
+ * @param {Number} options.numberRows count rows 
+ * @param {Array} taskList list of tasks
+ * @returns 
+ */
+async function test({numberRows}) {
   const created = await User.create({ firstName: "John" });
   console.log(created);
 }

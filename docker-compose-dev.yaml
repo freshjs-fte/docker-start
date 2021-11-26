@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+
+  fe_express: 
+    build:
+      context: "./"
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./:/server
+    networks:
+      - backend
+      - front
+    depends_on:
+      - fe_mongo_db
+
+
+  fe_mongo_db:
+    image: mongo:latest
+    volumes:
+      - ~/Documents/backup/mongodb/fe_mongo/:/data/db
+    networks:
+      - backend
+    
+
+networks:
+  backend:
+    name: test_net
+  front: 
+    name: front 
