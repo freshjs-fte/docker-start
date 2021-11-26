@@ -2,7 +2,7 @@ FROM node:14-alpine3.14
 
 # смена рабочей директории
 # аналогично RUN mkdir -p /server && cd /server
-WORKDIR /server
+WORKDIR /server 
 
 # копия файлов
 COPY ./ ./

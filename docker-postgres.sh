@@ -1,7 +1,6 @@
 sudo docker run   \
 -dit   \
 --name fe_postgres   \
-
 -e POSTGRES_PASSWORD=postgres   \
 -e POSTGRES_USER=postgres   \
 -e POSTGRES_DB=fe_docker   \
